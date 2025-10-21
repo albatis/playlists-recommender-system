@@ -8,7 +8,7 @@ import pandas as pd
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
-MODEL_PATH = os.getenv('OUTPUT_MODEL_PATH', './association_rules.pkl')
+MODEL_PATH = os.getenv('OUTPUT_MODEL_PATH', '/mnt/association_rules.pkl')
 API_VERSION = "2.0.0"
 
 rules: pd.DataFrame = None
