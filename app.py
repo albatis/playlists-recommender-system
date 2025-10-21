@@ -1,6 +1,5 @@
 import os
 import pickle
-import time
 from datetime import datetime
 from typing import List, Set
 
@@ -74,3 +73,10 @@ def recommend(request: RecommendationRequest):
     recommended_songs = get_recommendations_from_rules(input_songs, max_results=10)
     response_data = {"song": recommended_songs, "version": API_VERSION, "model": model_updated_at }
     return response_data
+
+
+@app.get("/healthz")
+def healthz():
+    """Health check endpoint. Returns 200 with a minimal JSON describing model load state."""
+    status = "ok" if rules is not None else "model_unavailable"
+    return {"status": status, "model": model_updated_at}
