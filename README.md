@@ -22,7 +22,7 @@ A documentação interativa é gerada automaticamente em:
 | `app.py` | Aplicação principal (API / interface) para interagir com o sistema de recomendação. |
 | `Dockerfile` | Arquivo para criação da imagem Docker do projeto. |
 | `requirements.txt` | Dependências Python necessárias. |
-| `.github/workflows/` | Workflow(s) de CI/CD para automação (ex: testes, lint, deploy). |
+| `.github/workflows/` | Workflow(s) de CI/CD para automação. |
 | `README.md` | Este arquivo de apresentação e instruções. |
 
 ---
@@ -52,7 +52,7 @@ pip install -r requirements.txt
 
 | Método | Rota | Descrição | Corpo da Requisição | Exemplo de Resposta |
 |:--------|:------|:------------|:--------------------|:--------------------|
-| `GET` | `/health` | Verifica se a API está operacional. | — | `{ "status": "ok" }` |
+| `GET` | `/healthz` | Verifica se a API está operacional. | — | `{"status":"ok","model":"2025-10-22 23:20:47"}` |
 | `POST` | `/recommend/api` | Gera recomendações de músicas baseadas na playlist enviada. | `{"liked_songs": ["One Dance","Closer","Roses"]}` | `{"song": ["What Do You Mean?","Treat You Better"],"version": "2.0.0","model": "2025-10-22 23:20:47"}` |
 | `GET` | `/docs` | Interface interativa Swagger UI gerada automaticamente pelo FastAPI. | — | Interface web interativa |
 | `GET` | `/redoc` | Documentação ReDoc alternativa, gerada automaticamente. | — | Interface web de documentação |
