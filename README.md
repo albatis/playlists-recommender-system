@@ -7,12 +7,6 @@ Dado o conteúdo de uma playlist (músicas, gêneros, artistas, etc.), o sistema
 
 O projeto implementa uma API REST moderna utilizando **FastAPI**, **Python 3** e **machine learning / filtragem colaborativa** para gerar recomendações musicais.  
 
-A documentação interativa é gerada automaticamente em:
-
-- Swagger UI → [`/docs`](http://localhost:50000/docs)
-- ReDoc → [`/redoc`](http://localhost:50000/redoc)
-
-
 ---
 
 ## 📂 Estrutura do repositório
